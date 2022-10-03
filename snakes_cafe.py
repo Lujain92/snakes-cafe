@@ -29,34 +29,57 @@ Tea
 Unicorn Tears
 """
 print(intro)
-print(menu)
+menu2={'Appetizer':['Wings','Cookies','Spring Rolls'],
+'Entrees':['Salmon','Steak','Meat Tornado','A Literal Garden'],
+'Desserts':['Ice Cream','Cake','Pie'],
+'Drinks' :['Coffee','Tea','Unicorn Tears']
 
-order_list=[] # make sure to put it here because if you put it inside the while it will make it empty 
-#all time
-# list.pop(element index ) to remove it by it is index 
-#list.count(element) to count the number of elemnt
-#list comprehension ?
+}
+
+
+for x in menu2 :
+    print(x)
+    print('-----')
+    for y in menu2[x]:
+        print(y)
+    print('\n')    
+
+order_list=[] # make sure to put it here because if you put it inside the while it will make it empty all time
 new_list=[]
+final_list=[]
+
 
 while True:
-    order=input("what would you like to order \n > ")
-    num_of_order=f"order of {order} have been added to your meal"
-    order_list.append(num_of_order)
+    order=input("what would you like to order \n > ").title() # for the first letter for each word
+   # .capitalize() for only the first letter
+    for somethings in menu2.values():
+
+        for something in somethings:
+            if order != something:
+                print('enter from menu')  
+           
+            if order == something:
+                 num_of_order=f"order of {order} have been added to your meal"
+                 order_list.append(num_of_order)
+                 print(order_list)
+    # if order != something:
+    #     print('enter from menu')  
+           
     if order.lower() == 'quit':
         break
+  
+    
 #all_order=" and ".join(order_list) when this line inside the while it is give us the list without quit but
 #when it is outside it gives the list with quit
+[new_list.append(f"{order_list.count(x)} of {x}") for x in order_list ] 
+[final_list.append(a) for a in new_list if a not in final_list] 
 
-for x in order_list:
-    y=f"{order_list.count(x)} of {x}"
-    new_list.append(y)
-#[new_list.append(y) for x in order_list if ]
-final_list=[]
-[final_list.append(a) for a in new_list if a not in final_list]
-final_list.pop(-1)
-#final_list=[a for a in new_list if a not in final_list] it is not work 
+#final_list.pop(-1)
+#final_list=[a for a in new_list if a not in final_list] # it is not work 
 
 all_order=" and ".join(final_list)
    
 print(all_order)
+
+    
 
