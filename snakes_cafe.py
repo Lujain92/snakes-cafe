@@ -52,18 +52,20 @@ final_list=[]
 while True:
     order=input("what would you like to order \n > ").title() # for the first letter for each word
    # .capitalize() for only the first letter
+    #arra=[]
+    #new=[]
     for somethings in menu2.values():
+        #arra.append([new.append(x)  for x in somethings] )
 
         for something in somethings:
-            if order != something:
-                print('enter from menu')  
-           
+          
             if order == something:
                  num_of_order=f"order of {order} have been added to your meal"
                  order_list.append(num_of_order)
-                 print(order_list)
-    # if order != something:
-    #     print('enter from menu')  
+                #  print(order_list)
+        # if order not in somethings:
+        #     print('enter from menu')
+        #     continue  
            
     if order.lower() == 'quit':
         break
@@ -80,6 +82,8 @@ while True:
 all_order=" and ".join(final_list)
    
 print(all_order)
+
+
 
     
 
