@@ -1,19 +1,38 @@
-LAB - Class xx
-Project: Project Name Here
-Author: Student/Group Name
+LAB - Class 01
+Project: Snakes-Cafe
+Author: Lujain Al-Jarrah
 Links and Resources
 Link01
 Link02
 Setup
 .env requirements (where applicable)
-i.e.
 
-PORT - Port Number
-DATABASE_URL - URL to the running Postgres instance/db
-How to initialize/run your application (where applicable)
-e.g. python main.py
-How to use your library (where applicable)
-Tests
-How do you run tests?
-Any tests of note?
-Describe any tests that you did not complete, skipped, etc
+
+something helped me
+1. list comprehension
+``` 
+list=[1,2,3]
+
+li=[a for a in list if a%2 !=0]
+
+print(li) # notice here that we don't write the li=[] 
+```
+but if do it like this
+
+[li.append(a) for a in list if a%2 !=0] you must declare list by write li=[]
+
+so it will be 
+```
+li=[]
+[li.append(a) for a in list if a%2 !=0]
+print(li) # notice here that we must write the li=[]
+```
+2. list.pop(element index ) to remove it by it is index 
+3. list.count(element) to count the number of elemnt
+
+note : this code is the same as line 62
+```
+#for x in order_list:
+   # y=f"{order_list.count(x)} of {x}"
+   # new_list.append(y)
+   ```
