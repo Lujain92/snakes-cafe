@@ -47,28 +47,29 @@ for x in menu2 :
 order_list=[] # make sure to put it here because if you put it inside the while it will make it empty all time
 new_list=[]
 final_list=[]
+new=[]
 
 
 while True:
     order=input("what would you like to order \n > ").title() # for the first letter for each word
    # .capitalize() for only the first letter
-    #arra=[]
-    #new=[]
     for somethings in menu2.values():
-        #arra.append([new.append(x)  for x in somethings] )
+        [new.append(x)  for x in somethings] 
 
-        for something in somethings:
-          
-            if order == something:
-                 num_of_order=f"order of {order} have been added to your meal"
-                 order_list.append(num_of_order)
-                #  print(order_list)
-        # if order not in somethings:
-        #     print('enter from menu')
-        #     continue  
-           
     if order.lower() == 'quit':
         break
+
+
+    if order not in new:
+       print(f'{order} not in our menu ,enter from menu')
+       continue
+          
+    elif order  in new:
+        num_of_order=f"order of {order} have been added to your meal"
+        order_list.append(num_of_order)
+                #  print(order_list)
+          
+    
   
     
 #all_order=" and ".join(order_list) when this line inside the while it is give us the list without quit but
